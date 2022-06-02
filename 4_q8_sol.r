@@ -41,8 +41,5 @@ for (i in 1:Nts){
 
 betahat=solve(t(rXtr)%*%rXtr)%*%t(rXtr)%*%Ytr
 
-etr=Ytr-rXtr%*%betahat
-ets=Yts-rXts%*%betahat
-
 print(paste("Training MISEemp:", MISE(rXtr, Ytr, betahat)))
 print(paste("Testing MISEemp:", MISE(rXts, Yts, betahat)))
