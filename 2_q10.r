@@ -27,5 +27,4 @@ for(w1 in W1){
         max <- w1
     }
 }
-
 print(max)

@@ -11,7 +11,7 @@ knnL<-function(Xtr,Ytr,Xts,K=1){
     iD=sort(Distance, decreasing=FALSE, index=TRUE)$ix[1:K]
     Yhat[i]=mean(Ytr[iD])
   }
-  Yhat
+  return(Yhat)
 }
 
 # X1 & X2 train
