@@ -1,7 +1,7 @@
 load(".RData")
 load("EXAM.Rdata")
 
-data <- Q1.G1.D
+data <- Q1.G3.D
 data
 
 # P(y=no | x1=yes, x2=no, x3=no )
