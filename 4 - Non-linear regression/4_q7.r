@@ -10,12 +10,12 @@
 # the variance and the  squared bias of the prediction y^ pour x=0
 # for the two models.
 
-biais_model <- function(yhat, y){ # PAS BON !
+biais_model <- function(yhat, y){
   #return(mean(mean(yhat)-y))
   return ((mean(yhat)-sin(0))^2)
 }
 
-var_model <- function(yhat){
+var_model <- function(yhat){ # Error ?
   return (var(yhat))
   #return(mean((yhat-mean(yhat))^2))
 }
@@ -38,14 +38,14 @@ for (i in 1:R){
   Y <- c(Y,y)
 
   # Model 1
-  Xtr1=Xtr[,1:2]
+  Xtr1=Xtr[,1:2] # Col 1 à 2 = (num, x)
   betahatr1=solve(t(Xtr1)%*%Xtr1) %*%t(Xtr1)%*%y
   Yhatr1=betahatr1[1]+betahatr1[2]*Xtr1[,2]
   Yhatr1=betahatr1[1]+betahatr1[2]*0 # Enoncé : X=0 for the models
   YHAT1 <- c(YHAT1,Yhatr1)
 
   # Model 2
-  Xtr2=Xtr
+  Xtr2=Xtr # Col 1 à 3 = (num, x, x^2)
   betahatr2=solve(t(Xtr2)%*%Xtr2) %*%t(Xtr2)%*%y
   Yhatr2=betahatr2[1]+betahatr2[2]*Xtr2[,2]+betahatr2[3]*Xtr2[,3]
   Yhatr2=betahatr2[1]+betahatr2[2]*0+betahatr2[3]*0 # Enoncé : X=0 for the models

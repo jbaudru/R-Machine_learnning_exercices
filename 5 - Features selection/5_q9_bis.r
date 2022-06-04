@@ -1,5 +1,4 @@
-load("FS2.Rdata")
-#load("FS.Rdata")
+load("FS9_bis.Rdata")
 
 n=NCOL(X)
 N=NROW(X)

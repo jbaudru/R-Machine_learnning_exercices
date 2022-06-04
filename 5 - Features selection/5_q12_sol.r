@@ -1,4 +1,5 @@
 load("FS6.Rdata")
+
 splitRT<-function(X,Y, splits){
   n<-NCOL(X)
   S<-length(splits)
@@ -18,6 +19,8 @@ splitRT<-function(X,Y, splits){
   }
   list(bestf=which.min(SSE),bestsplit=splits[bests[which.min(SSE)]])
 }
+
+Y
 
 n=NCOL(X)
 N=NROW(X)
