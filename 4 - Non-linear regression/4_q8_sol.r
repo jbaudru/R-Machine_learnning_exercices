@@ -28,7 +28,6 @@ Ntr=length(Ytr)
 Nts=length(Yts)
 rXtr=array(0,c(NROW(Xtr),M))
 rXts=array(0,c(NROW(Xts),M))
-
 for (i in 1:Ntr){
   for (m in 1:M)
     rXtr[i,m]=exp(-norm(Xtr[i,]-mu[m,])/sigma^2)
