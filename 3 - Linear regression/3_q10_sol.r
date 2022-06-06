@@ -23,5 +23,5 @@ for (b in 1:B){
 }
 
 # comparison analytical and simulated variance of the prediction
-print(paste("Prediction variance:", sd.w^2*(t(xhat)%*%ginv(t(X)%*%X)%*%xhat)))
-print(paste("MC value:", var(Y.hat)))
+print(paste("Prediction Var[y]:", sd.w^2*(t(xhat)%*%ginv(t(X)%*%X)%*%xhat)))
+print(paste("Bootstrap estimate Var[y]:", var(Y.hat)))

@@ -3,7 +3,7 @@ n=NCOL(X)
 N=NROW(X)
 
 MISE_emp <- function(y, yhat){
-  return (mean(y-yhat)^2)
+  return (mean((y-yhat)^2))
 }
 
 corXY=NULL

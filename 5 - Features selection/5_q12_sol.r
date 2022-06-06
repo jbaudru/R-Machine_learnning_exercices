@@ -1,5 +1,7 @@
 load("FS6.Rdata")
 
+# MOSE REVELANT FEATURES USING DECISION TREE
+
 splitRT<-function(X,Y, splits){
   n<-NCOL(X)
   S<-length(splits)

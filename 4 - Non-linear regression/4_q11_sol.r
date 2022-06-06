@@ -3,7 +3,7 @@ set.seed(0)
 
 # FOR KNN & Tree
 MISE_emp <- function(y, yhat){
-  return (mean(y-yhat)^2)
+  return (mean((y-yhat)^2))
 }
 
 # FOR KNN

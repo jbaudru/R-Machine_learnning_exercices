@@ -2,7 +2,7 @@ load("EXAM.Rdata")
 
 # FOR KNN & Tree
 MISE_emp <- function(y, yhat){
-  return (mean(y-yhat)^2)
+  return (mean((y-yhat)^2))
 }
 
 # FOR KNN
@@ -57,3 +57,24 @@ print(paste("Training 4 MISEloo:", MISE_loo(Xtr, Ytr, 4)))
 print(paste("Training 5 MISEloo:", MISE_loo(Xtr, Ytr, 5)))
 print(paste("Training 6 MISEloo:", MISE_loo(Xtr, Ytr, 6)))
 print(paste("Training 7 MISEloo:", MISE_loo(Xtr, Ytr, 7)))
+
+
+Nts=NROW(Xtr)
+
+Xts=c(0,0)
+
+Yhat1=knnL(Xtr,Ytr,Xtr,1)
+Yhat2=knnL(Xtr,Ytr,Xtr,2)
+Yhat3=knnL(Xtr,Ytr,Xtr,3)
+Yhat4=knnL(Xtr,Ytr,Xtr,4)
+Yhat5=knnL(Xtr,Ytr,Xtr,5)
+Yhat6=knnL(Xtr,Ytr,Xtr,6)
+Yhat7=knnL(Xtr,Ytr,Xtr,7)
+
+print(paste("Model 1 Yhat:", mean(Yhat1)))
+print(paste("Model 2 Yhat:", mean(Yhat2)))
+print(paste("Model 3 Yhat:", mean(Yhat3)))
+print(paste("Model 4 Yhat:", mean(Yhat4)))
+print(paste("Model 5 Yhat:", mean(Yhat5)))
+print(paste("Model 6 Yhat:", mean(Yhat6)))
+print(paste("Model 7 Yhat:", mean(Yhat7)))

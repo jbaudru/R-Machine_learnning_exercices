@@ -10,6 +10,9 @@ n=2
 X=D[,1:n] # Inputs
 Y=D[,n+1] # Output
 
+plot(X[Ip,1],X[Ip,2],col="green",xlab="x1",ylab="x2",ylim=c(-2,2))
+points(X[In,1],X[In,2],col="red")
+
 beta0=0
 beta=c(-1,1)
 
@@ -34,5 +37,5 @@ for (k in 1:Niter){
   beta=beta-eta*gradbeta
   beta0=beta0-eta*gradbeta0
   sx1=seq(-2,2,by=0.01)
-  #lines(sx1,-beta[1]/beta[2]*sx1-beta0/beta[2])
+  lines(sx1,-beta[1]/beta[2]*sx1-beta0/beta[2])
 }

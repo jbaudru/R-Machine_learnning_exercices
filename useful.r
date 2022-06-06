@@ -26,7 +26,7 @@ MISE_emp <- function(X, Y, betahat){
 }
 
 MISE_emp <- function(y, yhat){
-  return (mean(y-yhat)^2)
+  return (mean((y-yhat)^2))
 }
 
 MISE_loo <- function(Xtr, Ytr, K){ # K = Number of neighboors for KNNL

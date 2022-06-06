@@ -1,5 +1,5 @@
 MISE_emp <- function(y, yhat){
-  return (mean(y-yhat)^2)
+  return (mean((y-yhat)^2))
 }
 
 knnL<-function(Xtr,Ytr,Xts,K=1){

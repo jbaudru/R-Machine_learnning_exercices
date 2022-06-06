@@ -52,7 +52,8 @@ for (i in 1:N){
   FPR2=c(FPR2,length(which(Y[setdiff(1:N,I2)]==-1))/N0)
 }
 
-plot(FPR1,TPR1,type="l",col="yellow",xlab="FPR",ylab="TPR",main="ROC curves")
+png(file="Qi.png")
+plot(FPR1,TPR1,type="l",col="red",xlab="FPR",ylab="TPR",main="ROC curves")
 lines(FPR1,FPR1,lty=2)
 lines(FPR2,TPR2,col="black")
-legend(0.5,0.3,c("TH","NB"),col=c("yellow","black"),lty=1,text.font = 2,pt.cex = 1, cex = 0.7,ncol=3)
+legend(0.5,0.3,c("TH","NB"),col=c("red","black"),lty=1,text.font = 2,pt.cex = 1, cex = 0.7,ncol=3)
