@@ -1,5 +1,6 @@
 load("EXAM.Rdata")
 
+# For ninary classification
 # RETURN : TP, FP, FN, TN, TPR, FPR, TNR, PR, ER & BER
 assess<-function(Y,Yhat){
   if (length(Y)!=length(Y))
