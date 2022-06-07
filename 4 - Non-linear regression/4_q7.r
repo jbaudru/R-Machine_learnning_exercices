@@ -52,8 +52,8 @@ for (i in 1:R){
   YHAT2 <- c(YHAT2,Yhatr2)
 }
 
-print(paste("VAR Model1:", var_model(YHAT1)))
+print(paste("VAR Model 1:", var_model(YHAT1)))
 print(paste("BIAIS^2 Model 1:", biais_model(YHAT1, Y)^2))
 
-print(paste("VAR Model2:", var_model(YHAT2)))
+print(paste("VAR Model 2:", var_model(YHAT2)))
 print(paste("BIAIS^2 Model 2:", biais_model(YHAT2, Y)^2))

@@ -1,5 +1,4 @@
 library(tree)
-set.seed(0)
 
 # FOR KNN & Tree
 MISE_emp <- function(y, yhat){
@@ -24,6 +23,7 @@ treeL<-function(Xtr,Ytr,Xts,s=1){
   colnames(df)[1]<-'Y'
   dfts<-data.frame(Xts)
   colnames(dfts)[1:n]<-colnames(df)[2:(n+1)]
+  set.seed(0)
   model<- tree(Y~.,df,minsize=s) # model = h
   Yhat=predict(model,dfts)
   return (Yhat)

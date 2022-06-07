@@ -1,12 +1,10 @@
 library(nnet)
-set.seed(0)
 
-# FOR KNN & Tree
+# NNET
 MISE_emp <- function(y, yhat){
   return (mean((y-yhat)^2))
 }
 
-# FOR KNN
 MISE_loo <- function(Xtr, Ytr, K){ # K = Number of hidden node
   Ntr=length(Ytr)
   Eloo1<-NULL
@@ -24,6 +22,7 @@ nnetL<-function(Xtr,Ytr,Xts,s=1){
   colnames(df)[1]<-'Y'
   dfts<-data.frame(Xts)
   colnames(dfts)[1:n]<-colnames(df)[2:(n+1)]
+  set.seed(0)
   model<-nnet(Y~.,df,size=s,rang=0.1, linout=TRUE,trace=FALSE)
   #model<- tree(Y~.,df,minsize=s) # model = h
   Yhat=predict(model,dfts)

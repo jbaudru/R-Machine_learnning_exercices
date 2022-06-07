@@ -20,6 +20,7 @@ knnL<-function(Xtr,Ytr,Xts,K=1){
   N=NROW(Xtr)
   Yhat=numeric(Nts)
   for (i in 1:Nts){
+    # Appliquer distance Euclidienne !!!!!
     Distance=apply((Xtr-array(1,c(N,1))%*%Xts[i,])^2,1,mean)
     iD=sort(Distance, decreasing=FALSE, index=TRUE)$ix[1:K]
     Yhat[i]=mean(Ytr[iD])
@@ -27,6 +28,7 @@ knnL<-function(Xtr,Ytr,Xts,K=1){
   return(Yhat)
 }
 
+Q4.G1.D
 x1 = Q4.G1.D[,1]
 x2 = Q4.G1.D[,2]
 y = Q4.G1.D[,3]
@@ -34,7 +36,7 @@ y = Q4.G1.D[,3]
 Xtr=cbind(x1,x2)
 Ytr=y
 
-Yhat1=knnL(Xtr,Ytr,Xtr,1)
+Yhat1=knnL(Xtr,Ytr,Xt,1)
 Yhat2=knnL(Xtr,Ytr,Xtr,2)
 Yhat3=knnL(Xtr,Ytr,Xtr,3)
 Yhat4=knnL(Xtr,Ytr,Xtr,4)
